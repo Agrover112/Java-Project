@@ -1,0 +1,63 @@
+cha 3455.0  initial  3455.0  17/11/2019 05:46:00
+ksh 4566.0  initial  4566.0  17/11/2019 05:51:46
+nar 4543.0  initial  4543.0  17/11/2019 05:56:18
+vis 4333.0  initial  4333.0  17/11/2019 05:57:07
+har 9877.0  initial  9877.0  17/11/2019 06:01:02
+sdf 23456.0  initial  23456.0  17/11/2019 06:03:05
+    345.0  deposit  345.0  17/37/2019 06:37:26
+    456.0  deposit  456.0  17/39/2019 06:39:24
+abh 2345.0  initial  2345.0  17/11/2019 06:41:26
+jai 2345.0  initial  2345.0  17/11/2019 06:44:38
+vis 23444.0  initial  23444.0  17/11/2019 06:45:31
+    2345.0  deposit  2345.0  17/53/2019 06:53:58
+2345.0  deposit    0.02345.0  17/00/2019 07:00:42
+3434.0  deposit    0.0  17/03/2019 07:03:22
+bhu 1234.0  initial  1234.0  17/11/2019 07:11:12
+cha 7898.0  initial  7898.0  17/11/2019 07:30:41
+abh 43354.0  initial  43354.0  17/11/2019 07:59:23
+aka 2345.0  initial  2345.0  17/11/2019 08:17:27
+jai  2  savings  1234.0  deposit  3579.0  17/29/2019 08:29:18
+tus 1254.0  initial  1254.0  17/11/2019 08:31:34
+tus  0  savings  1000.0  deposit  2254.0  17/32/2019 08:32:11
+tus  0  savings  1000.0  withdraw  1254.0  17/32/2019 08:32:23
+Bha 2000.0  initial  2000.0  17/11/2019 08:44:43
+Bha  7  savings  2000.0  deposit  4000.0  17/45/2019 08:45:14
+Bha  7  savings  2000.0  withdraw  2000.0  17/45/2019 08:45:36
+aka  1  savings  1000.0  withdraw  1345.0  17/52/2019 08:52:39
+aka  1  savings  2000.0  deposit  3345.0  17/55/2019 08:55:35
+aka  1  2345.0  withdraw  1000.0  17/57/2019 08:57:48
+jai  savings  1787.0  deposit  5366.0  17/00/2019 09:00:45
+Nan 4566.0  initial  4566.0  17/11/2019 09:39:53
+Nan  savings  2345.0  deposit  6911.0  17/40/2019 09:40:24
+abh 2000.0  initial  2000.0  17/11/2019 10:35:34
+abh  current  200.0  withdraw  1800.0  17/36/2019 10:36:12
+Boo 3000.0  initial  3000.0  17/11/2019 11:17:38
+Boo  savings  1000.0  withdraw  2000.0  17/18/2019 11:18:52
+Boo  savings  6767.0  deposit  8767.0  17/19/2019 11:19:07
+Boo  savings  1000.0  withdraw  7767.0  17/28/2019 11:28:31
+Ran 7000.0  initial  7000.0  17/11/2019 11:34:38
+Ran  current  4000.0  deposit  11000.0  17/38/2019 11:38:24
+Shr 1245.0  initial  1245.0  17/11/2019 11:39:21
+Shr  savings  300.0  deposit  1545.0  17/39/2019 11:39:51
+Shr  savings  200.0  withdraw  1345.0  17/40/2019 11:40:01
+rew 1000.0  initial  1000.0  19/11/2019 12:49:26
+jai 2.32323226E9  initial  2.32323226E9  20/11/2019 01:35:22
+jai  savings  125.0  withdraw  5241.0  20/42/2019 01:42:55
+jai  savings  1000.0  withdraw  4241.0  20/58/2019 02:58:09
+jai  savings  1000.0  withdraw  3241.0  20/03/2019 03:03:31
+jai  savings  1000.0  withdraw  2241.0  20/42/2019 06:42:54
+jai  savings  300.0  withdraw  1941.0  20/44/2019 06:44:45
+jai  savings  300.0  withdraw  1641.0  20/51/2019 06:51:20
+jai  savings  1000.0  withdraw  641.0  20/59/2019 06:59:41
+jai  savings  1000.0  withdraw  641.0  20/03/2019 07:03:46
+jai  savings  50.0  withdraw  591.0  20/04/2019 07:04:16
+kap 12345.0  initial  12345.0  20/11/2019 07:20:32
+Ksh 1000.0  initial  1000.0  20/11/2019 09:14:42
+Ksh  savings  200.0  withdraw  800.0  20/16/2019 09:16:08
+kap  savings  50.0  withdraw  12295.0  21/21/2019 02:21:35
+kap  savings  200.0  withdraw  12095.0  21/01/2019 03:01:32
+kap  savings  1.23456792E8  deposit  1.23468888E8  21/19/2019 03:19:59
+kap  savings  1000.0  withdraw  1.23467888E8  21/20/2019 03:20:10
+kap  savings  1000.0  deposit  1.23468888E8  21/43/2019 10:43:48
+kap  savings  1000.0  withdraw  1.23467888E8  21/43/2019 10:43:58
+kap  savings  1000.0  withdraw  1.23466888E8  21/24/2019 11:24:31
