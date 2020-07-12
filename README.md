@@ -1,1 +1,1 @@
-# Java-Project
+# Hospital Management Project in Java
