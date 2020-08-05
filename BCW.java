@@ -1,198 +1,122 @@
-package org.deeplearning4j.examples.dataexamples;
-
-import org.bytedeco.javacv.FrameFilter;
-import org.datavec.api.records.reader.RecordReader;
-import org.datavec.api.records.reader.impl.csv.CSVRecordReader;
-import org.datavec.api.split.FileSplit;
-import org.deeplearning4j.datasets.datavec.RecordReaderDataSetIterator;
-import org.deeplearning4j.nn.conf.MultiLayerConfiguration;
-import org.deeplearning4j.nn.conf.NeuralNetConfiguration;
-import org.deeplearning4j.nn.conf.layers.DenseLayer;
-import org.deeplearning4j.nn.conf.layers.OutputLayer;
-import org.deeplearning4j.nn.multilayer.MultiLayerNetwork;
-import org.deeplearning4j.nn.weights.WeightInit;
-import org.deeplearning4j.optimize.listeners.ScoreIterationListener;
-import org.nd4j.evaluation.classification.Evaluation;
-import org.nd4j.linalg.activations.Activation;
-import org.nd4j.linalg.api.ndarray.INDArray;
-import org.nd4j.linalg.dataset.DataSet;
-import org.nd4j.linalg.dataset.SplitTestAndTrain;
-import org.nd4j.linalg.dataset.api.iterator.DataSetIterator;
-import org.nd4j.linalg.learning.config.Nesterovs;
-import org.nd4j.linalg.lossfunctions.LossFunctions;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import java.io.*;
-import java.util.*;
-
 /**
- Author :Ankit Grover
- The following program is used to get predictions for a patient as to whether he has BreastCancer or not
+ *Text genereted by Simple GUI Extension for BlueJ
  */
-public class BreastCancer {
-    public static String dataLocalPath; //Stores the data's local path
-   public static  File locationToSave;//Path to save the model
-    private static int labelIndex;
-    private static int numClasses;     //Number of predictive classes
-    private static int batchSize;       //2^n
-    private static DataSet train;              //Test and training data
-    private static DataSet test;
-   public static  MultiLayerNetwork model;
+import javax.swing.UIManager.LookAndFeelInfo;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseWheelEvent;
+import java.awt.event.MouseWheelListener;
+import javax.swing.border.Border;
+import javax.swing.*;
 
-    static double learningRate = 0.01;
-    static int nEpochs ;
+public class BCW extends JFrame implements ActionListener{
+    private JMenuBar menuBar;
+    private JButton button1;
+    private JButton button2;
+    private JButton button3;
+    private JLabel label1;
 
-    static int numInputs ;
-    static int numOutputs ;
-    static int numHiddenNodes ;
-    private static  MultiLayerConfiguration conf;
+    //Constructor 
+    public BCW(){
 
-    private static Logger log = LoggerFactory.getLogger(CSVExample.class);//For checking te LOGS
+        this.setSize(500,400);
+        //menu generate method
 
-    public static void main(String args[]) throws Exception {
+        //pane with null layout
+        JPanel contentPane = new JPanel(null);
+        contentPane.setPreferredSize(new Dimension(500,400));
+        contentPane.setBackground(new Color(255,204,204));
 
-      /*  System.out.println("Hello");
-        int seed = 0;
-        double learningRate = 0.01;
-        int batchSize =32;
-        int nEpochs = 10;
+        button1 = new JButton();
+        button1.setBounds(206,122,90,35);
+        button1.addActionListener(this);
+        button1.setBackground(new Color(214,217,223));
+        button1.setForeground(new Color(0,0,0));
+        button1.setEnabled(true);
+        button1.setFont(new Font("sansserif",0,12));
+        button1.setText("Predict");
+        button1.setVisible(true);                    //SETTING BUTTON1
 
-        int numInputs = 8;
-        int numOutputs = 8;
-        int numHiddenNodes =8;
+        button2 = new JButton();
+        button2.setBounds(205,195,90,35);
+        button2.addActionListener(this);
+        button2.setBackground(new Color(214,217,223));
+        button2.setForeground(new Color(0,0,0));
+        button2.setEnabled(true);
+        button2.setFont(new Font("sansserif",0,12));
+        button2.setText("For Users");
+        button2.setVisible(true);                  //SETTING BUTTON 2
 
-        RecordReader rr = new CSVRecordReader();
-        rr.initialize(new FileSplit(new File("C:\\Users\\hmang\\Desktop\\linear_data_train.csv")));
-        DataSetIterator trainIter = new RecordReaderDataSetIterator(rr, batchSize, 0, 2);
-        */
-        dataLocalPath = "C:\\Users\\hmang\\deeplearning4j-examples\\dl4j-examples\\src\\main\\java\\org\\deeplearning4j\\examples\\dataexamples\\BCW.csv";
-        //dataLocalPath="C:\\Users\\hmang\\Desktop\\BCW.csv";
-        read_CSV(dataLocalPath);
-        set_init_NetworkParams(0.01, 200, 8, 2, 8);
-        System.out.println(train);
-        /**Now the phase of building the NN model starts */
-        try {
-            buildNetwork();
-            compile();
-        }
-        catch (Exception obj){System.out.println(obj.getMessage());}
+        button3 = new JButton();
+        button3.setBounds(202,257,90,35);
+        button3.addActionListener(this);
+        button3.setBackground(new Color(214,217,223));
+        button3.setForeground(new Color(0,0,0));
+        button3.setEnabled(true);
+        button3.setFont(new Font("sansserif",0,12));
+        button3.setText("comingsoon");
+        button3.setVisible(true);               //SETTING BUTTON3
 
+        label1 = new JLabel();
+        label1.setBounds(220,12,150,35);
+        label1.setBackground(new Color(214,217,223));
+        label1.setForeground(new Color(0,0,0));
+        label1.setEnabled(true);
+        label1.setFont(new Font("SansSerif",0,20));
+        label1.setText("WELCOME");
+        label1.setVisible(true);  
 
+        
+        //SETTING     LABEL
+        //adding components to contentPane panel
+        contentPane.add(button1);
+        contentPane.add(button2);
+        contentPane.add(button3);
+        contentPane.add(label1);
+
+        //adding panel to JFrame and seting of window position and close operation
+        this.add(contentPane);
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.setTitle("Cancer Research Insitute");
+        this.setLocationRelativeTo(null);
+        this.pack();
+        this.setVisible(true);
     }
 
-    //The following method is used to read the CSV file
-    //And split it into test and train sets for performing further evaluation
-    //Also the data members of the class are set
-    private static void read_CSV(String csvpath) throws IOException {
-        //ADD LOADING ANIMATION HERE
-        try {
-            RecordReader rr = new CSVRecordReader(',');
+    //method for generate menu
 
-            rr.initialize(new FileSplit(new File(csvpath)));
-            labelIndex = 8;
-            numClasses = 2;
-            batchSize = 32;
-            System.out.println(rr);
-            //Calling method for splitting the file
-            train_test_split(rr);
-        } catch (InterruptedException e) {
-            System.out.println(e.getMessage());
-        } catch (Exception e) {
-            e.getLocalizedMessage();
-        } finally {
-            System.out.println("FILE READ");
-        }
-
-
-
-    }
-
-    private static void train_test_split(RecordReader rr) {
-        try {
-            //ADD LOADING HERE TOO
-            RecordReaderDataSetIterator iterator = new RecordReaderDataSetIterator(rr, batchSize, labelIndex, numClasses);
-            iterator.setCollectMetaData(true);
-            DataSet allData = iterator.next();
-            System.out.println(allData);
-            allData.shuffle(123); //How to shuffle the data
-            SplitTestAndTrain testAndTrain = allData.splitTestAndTrain(0.60);  //Use 70% of data for training
-
-            train = testAndTrain.getTrain();
-            test = testAndTrain.getTest();
-        } catch (Exception e) {
-            System.out.println(e.getCause());
-        } finally {
-            System.out.println("SPLITTING DONE");
-        }
-    }
-
-    private static void set_init_NetworkParams(double lr, int nE, int nI, int nO, int nHN) {
-        learningRate = lr;
-        nEpochs = nE;
-        numInputs = nI;
-        numOutputs = nO;
-        numHiddenNodes = nHN;
-        System.out.println("INTIALIZATION DONE");
-    }
-
-    private static void buildNetwork() {
-        try {
-            //Using the nested class of NNC i.e Builder to start building the neural network
-                conf = new NeuralNetConfiguration.Builder()
-                .seed(0)
-                .weightInit(WeightInit.UNIFORM)
-                .updater(new Nesterovs(learningRate, 0.9))
-                .list()
-                .layer(new DenseLayer.Builder().nIn(numInputs).nOut(numHiddenNodes)                   //THE FIRST INPUT LAYER
-                    .activation(Activation.RELU)
-                    .build())
-                .layer(new DenseLayer.Builder().nIn(numInputs).nOut(numHiddenNodes)                   //THE SECOND LAYER
-                    .activation(Activation.LEAKYRELU)
-                    .build())
-                .layer(new OutputLayer.Builder(LossFunctions.LossFunction.NEGATIVELOGLIKELIHOOD)      //OUTPUT LAYER
-                    .activation(Activation.SOFTMAX)
-                    .nIn(numHiddenNodes).nOut(numOutputs).build())
-                .build();
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-        } finally {
-            System.out.println("BUILD COMPLETE.....now RETURNING");
-        }
-    }
-
-    private static void compile() throws  IOException
+    public void actionPerformed(ActionEvent e)
     {
-             model = new MultiLayerNetwork(conf);
-            model.init();
-            model.setListeners(new ScoreIterationListener(100));
-
-                for (int i = 0; i < 1000; i++) {
-                    model.fit(train);
-                }
-
-            //evaluate the model on the test set
-            Evaluation eval = new Evaluation(numClasses);
-            INDArray output = model.output(test.getFeatures());
-            eval.eval(test.getLabels(), output);
-
-               / save(model);
-        }
-        public static void save(MultiLayerNetwork model) throws IOException
+        if (e.getSource()==button1)
         {
-            try {
-                    locationToSave = new File("C:\\Users\\hmang\\deeplearning4j-examples\\dl4j-examples\\src\\main\\java\\org\\deeplearning4j\\examples\\dataexamples\\BCW.zip");
-                    //Where to save the network. Note: the file is in .zip format - can be opened externally
-                boolean saveUpdater = true;                                             //Updater: i.e., the state for Momentum, RMSProp, Adagrad etc. Save this if you want to train your network more in the future
-                model.save(locationToSave, saveUpdater);
-            }
-            catch(Exception obj){System.out.println(obj.getMessage());}
-            finally {
-                System.out.println("MODEL SAVED.....");
-            }
-              //MultiLayerNetwork restored = MultiLayerNetwork.load(locationToSave, saveUpdater);
-
-            //System.out.println("Saved and loaded parameters are equal:      " + model.params().equals(restored.params()));
-             //locationToSave System.out.println("Saved and loaded configurations are equal:  " + model.getLayerWiseConfigurations().equals(restored.getLayerWiseConfigurations()));
+            new Predict();
+        }
+        else if (e.getSource()==button2)
+        {
+            String  args[]={"as","as"};
+            //Home.main(args);
+            new HomeGUI();
+        }
+        else if (e.getSource()==button3)
+        {
+            //do something
         }
     }
+
+    public static void main(String[] args)
+    {
+
+        System.setProperty("swing.defaultlaf", "com.sun.java.swing.plaf.nimbus.NimbusLookAndFeel");
+        javax.swing.SwingUtilities.invokeLater(new Runnable() {
+                public void run() {
+                    new BCW();
+                }
+            });
+    }
+}
 
