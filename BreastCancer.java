@@ -68,7 +68,7 @@ public class BreastCancer {
         dataLocalPath = "C:\\Users\\hmang\\deeplearning4j-examples\\dl4j-examples\\src\\main\\java\\org\\deeplearning4j\\examples\\dataexamples\\BCW.csv";
         //dataLocalPath="C:\\Users\\hmang\\Desktop\\BCW.csv";
         read_CSV(dataLocalPath);
-        set_init_NetworkParams(0.05, 100, 8, 2, 8);
+        set_init_NetworkParams(0.01, 200, 8, 2, 8);
         System.out.println(train);
         /**Now the phase of building the NN model starts */
         try {
@@ -175,7 +175,7 @@ public class BreastCancer {
             INDArray output = model.output(test.getFeatures());
             eval.eval(test.getLabels(), output);
 
-               save(model);
+               / save(model);
         }
         public static void save(MultiLayerNetwork model) throws IOException
         {
